@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="first" namespace="/" extends="struts-default">
+		<action name="querybyname" method="execute" class="action.bookaction">
+			<result name="success">/QueryAuthor.jsp</result>
+		</action>
+		
+		<action name="detail" method="showDetails" class="action.bookaction" >
+			<result name="success">/QueryBook.jsp</result>
+		</action>
+		
+	        <action name="showAuthor" method="ShowAuthor" class="action.bookaction" >
+			<result name="success">/Authorlist.jsp</result>
+		</action>
+		
+		<action name="deleteone" method="delete" class="action.bookaction" >
+			<result name="deleteok">/DeleteBook.jsp</result>
+		</action>
+		
+		<action name="updateone" method="update" class="action.bookaction">
+			<result name="updateok">/UpdateBook.jsp</result>
+		</action>
+		
+		<action name="Addnewauthor" method="judgeAuthor"  class="action.bookaction">
+			<result name="notinauthor">/AddAuthor.jsp</result>
+			<result name="addalready">/AddBook.jsp</result>
+		</action>
+		<action name="addoneauthor" method="addAuthor" class="action.bookaction">
+			<result name="addauthorok">/index.jsp</result>
+		</action>
+		<action name="addonebook" method="addBook" class="action.bookaction">
+			<result name="addbookok">/index.jsp</result>
+		</action>
+		
+	</package>
+</struts>    
